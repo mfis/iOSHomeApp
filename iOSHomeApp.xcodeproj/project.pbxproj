@@ -13,10 +13,14 @@
 		8C7C476424FE950600FA03CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C7C476324FE950600FA03CF /* Assets.xcassets */; };
 		8C7C476724FE950600FA03CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C7C476624FE950600FA03CF /* Preview Assets.xcassets */; };
 		8C7C476A24FE950600FA03CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C7C476824FE950600FA03CF /* LaunchScreen.storyboard */; };
+		8C7C477224FEC1A700FA03CF /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C477124FEC1A700FA03CF /* Data.swift */; };
+		8C7C477424FEC24900FA03CF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C477324FEC24900FA03CF /* SettingsView.swift */; };
+		8C7C477624FEC2AA00FA03CF /* signInFirst.html in Resources */ = {isa = PBXBuildFile; fileRef = 8C7C477524FEC2AA00FA03CF /* signInFirst.html */; };
+		8C7C477824FEC2DC00FA03CF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C477724FEC2DC00FA03CF /* UserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8C7C475A24FE950500FA03CF /* iOSHomeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSHomeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C7C475A24FE950500FA03CF /* Zuhause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zuhause.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7C475D24FE950500FA03CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C7C475F24FE950500FA03CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8C7C476124FE950500FA03CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -24,6 +28,10 @@
 		8C7C476624FE950600FA03CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8C7C476924FE950600FA03CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C7C476B24FE950600FA03CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C7C477124FEC1A700FA03CF /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		8C7C477324FEC24900FA03CF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		8C7C477524FEC2AA00FA03CF /* signInFirst.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = signInFirst.html; sourceTree = "<group>"; };
+		8C7C477724FEC2DC00FA03CF /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +56,7 @@
 		8C7C475B24FE950500FA03CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8C7C475A24FE950500FA03CF /* iOSHomeApp.app */,
+				8C7C475A24FE950500FA03CF /* Zuhause.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,6 +64,7 @@
 		8C7C475C24FE950500FA03CF /* iOSHomeApp */ = {
 			isa = PBXGroup;
 			children = (
+				8C7C477524FEC2AA00FA03CF /* signInFirst.html */,
 				8C7C475D24FE950500FA03CF /* AppDelegate.swift */,
 				8C7C475F24FE950500FA03CF /* SceneDelegate.swift */,
 				8C7C476124FE950500FA03CF /* ContentView.swift */,
@@ -63,6 +72,9 @@
 				8C7C476824FE950600FA03CF /* LaunchScreen.storyboard */,
 				8C7C476B24FE950600FA03CF /* Info.plist */,
 				8C7C476524FE950600FA03CF /* Preview Content */,
+				8C7C477124FEC1A700FA03CF /* Data.swift */,
+				8C7C477324FEC24900FA03CF /* SettingsView.swift */,
+				8C7C477724FEC2DC00FA03CF /* UserData.swift */,
 			);
 			path = iOSHomeApp;
 			sourceTree = "<group>";
@@ -92,7 +104,7 @@
 			);
 			name = iOSHomeApp;
 			productName = iOSHomeApp;
-			productReference = 8C7C475A24FE950500FA03CF /* iOSHomeApp.app */;
+			productReference = 8C7C475A24FE950500FA03CF /* Zuhause.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -136,6 +148,7 @@
 				8C7C476A24FE950600FA03CF /* LaunchScreen.storyboard in Resources */,
 				8C7C476724FE950600FA03CF /* Preview Assets.xcassets in Resources */,
 				8C7C476424FE950600FA03CF /* Assets.xcassets in Resources */,
+				8C7C477624FEC2AA00FA03CF /* signInFirst.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,9 +159,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C7C477824FEC2DC00FA03CF /* UserData.swift in Sources */,
+				8C7C477424FEC24900FA03CF /* SettingsView.swift in Sources */,
 				8C7C475E24FE950500FA03CF /* AppDelegate.swift in Sources */,
 				8C7C476024FE950500FA03CF /* SceneDelegate.swift in Sources */,
 				8C7C476224FE950500FA03CF /* ContentView.swift in Sources */,
+				8C7C477224FEC1A700FA03CF /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,9 +310,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.fimatas.iOSHomeApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Zuhause;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -314,9 +330,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.fimatas.iOSHomeApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Zuhause;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
