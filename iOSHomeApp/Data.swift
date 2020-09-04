@@ -13,14 +13,9 @@ struct TokenCreationResponseModel: Codable {
     var token: String
 }
 
-let userDefaults = UserDefaults.standard
-
-let dataUrl = loadUrl()
-let dataUserName = loadUserName()
-let dataUserToken = loadUserToken()
+fileprivate let userDefaults = UserDefaults.standard
 
 func loadUrl() -> String {
-    print("CALL LOADURL")
     if let x = userDefaults.string(forKey: "userDefaultKeyUrl") {
         return x
     }else{
@@ -54,9 +49,4 @@ func loadUserToken() -> String {
 
 func saveUserToken(newUserToken : String) {
     userDefaults.setValue(newUserToken, forKey: "userDefaultKeyUserToken")
-}
-
-func urlEncode(_ string : String) -> String {
-    let encoded = string.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
-    return encoded!
 }

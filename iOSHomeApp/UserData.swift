@@ -10,15 +10,15 @@ import Combine
 import SwiftUI
 
 final class UserData: ObservableObject {
-     
-    @Published var homeUrl = dataUrl
-    @Published var settingsUrl = dataUrl
+    
+    @Published var homeUrl = loadUrl()
+    @Published var settingsUrl = loadUrl()
     @Published var lastCalledUrl = ""
     
-    @Published var homeUserName = dataUserName
-    @Published var settingsUserName = dataUserName
+    @Published var homeUserName = loadUserName()
+    @Published var settingsUserName = loadUserName()
     
-    @Published var homeUserToken = dataUserToken
+    @Published var homeUserToken = loadUserToken()
     
     @Published var settingsUserPassword = ""
     

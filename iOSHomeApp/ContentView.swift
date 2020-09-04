@@ -41,16 +41,12 @@ struct Content : View {
     }
     
     var body: some View {
-        
         WebView()
             .navigationBarTitle(Text("Zuhause"), displayMode: .inline)
             .navigationBarItems(
                 leading:  NavIconLeft(),
                 trailing: NavIconRight()
         ).edgesIgnoringSafeArea(.bottom)
-            .onAppear {
-                print("######## webview appear ########")
-        }
     }
     
 }
@@ -78,30 +74,6 @@ struct NavIconRight : View {
     }
 }
 
-class WebViewObserver : NSObject {
-    
-    var userData : UserData = UserData()
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        
-        switch keyPath {
-        case #keyPath(WKWebView.title):
-            if let dict = change{
-                for (key,value) in dict {
-                    if(key.rawValue == "new"){
-                        // print("NEW TITLE: " + (value as! String))
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            self.userData.webViewTitle = (value as! String)
-                        }
-                    }
-                }
-            }
-        default:
-            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
-        }
-    }
-}
-
 struct WebView : UIViewRepresentable {
     
     @EnvironmentObject private var userData : UserData
@@ -121,9 +93,8 @@ struct WebView : UIViewRepresentable {
     }
     
     func updateUIView(_ webView: WKWebView, context: Context) {
-        print("*** UPDATE! ***")
+        
         if(!userData.homeUrl.isEmpty && userData.lastCalledUrl != userData.homeUrl){
-            print("*** REFRESH WEBVIEW *** $$" + userData.lastCalledUrl + "$$" + userData.homeUrl + "$$")
             loadWebView(webView)
         }
     }
@@ -135,8 +106,6 @@ struct WebView : UIViewRepresentable {
             webView.loadFileURL(fileUrl, allowingReadAccessTo: fileUrl.deletingLastPathComponent())
             userData.lastCalledUrl = fileUrl.absoluteString
         }else{
-            print("TOKEN=" + userData.homeUserToken)
-            // var request = URLRequest.init(url: URL.init(string: userData.homeUrl)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
             var request = URLRequest.init(url: URL.init(string: userData.homeUrl)!)
             request.addValue(userData.homeUserName, forHTTPHeaderField: "appUserName")
             request.addValue(userData.homeUserToken, forHTTPHeaderField: "appUserToken")
@@ -147,7 +116,6 @@ struct WebView : UIViewRepresentable {
     }
     
     func dismantleUIView(_ uiView: Self.UIViewType, coordinator: Self.Coordinator){
-        print("dismantleUIView web view")
         uiView.removeObserver(webViewObserver, forKeyPath: #keyPath(WKWebView.title))
     }
 }

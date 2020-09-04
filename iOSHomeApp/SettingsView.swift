@@ -47,20 +47,6 @@ struct SettingsView: View {
         }
     }
     
-    fileprivate func cleanupUrl(forUrl: String) -> String{
-        
-        var url = forUrl.lowercased()
-        
-        if(!url.starts(with: "http://") && !url.starts(with: "https://")){
-            url = "https://" + url
-        }
-        
-        if(!url.hasSuffix("/")){
-            url = url + "/"
-        }
-        return url
-    }
-    
     func signIn(){
         
         var urlString = userData.settingsUrl
@@ -74,53 +60,35 @@ struct SettingsView: View {
     
     func validateLogin(_ urlString : String) {
         
-        let whoami = urlString + "whoami"
-        print("isValidHomeClientUrl for: " + whoami)
-        let url = URL(string: whoami)
-        guard let requestUrl = url else { fatalError() }
-        let timeout : TimeInterval = 3.0
-        var request = URLRequest(url: requestUrl, timeoutInterval: timeout)
-        request.httpMethod = "GET"
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print("Error took place \(error)")
-                self.showLoginResult(state: false)
-                DispatchQueue.main.async() {
-                    self.loginMessage = "Keine Home-Client Installation unter URL vorhanden."
-                }
-                return
+        func onError(){
+            self.showLoginResult(state: false)
+            DispatchQueue.main.async() {
+                self.loginMessage = "Keine Home-Client Installation unter URL vorhanden."
             }
-            guard let data = data else {return}
-            let dataString = String(data: data, encoding: String.Encoding.utf8)! as String
-            if(dataString == "de.fimatas.home.client"){
+        }
+        
+        func onSuccess(response : String){
+            if(response == "de.fimatas.home.client"){
                 self.auth(urlString)
             }
         }
-        task.resume()
+        
+        httpCall(urlString: urlString + "whoami", timeoutSeconds: 3.0, method: HttpMethod.GET, postParams: nil, errorHandler: onError, successHandler: onSuccess)
     }
     
     func auth(_ urlString : String){
         
-        let url = URL(string: urlString + "createAuthToken")
-        guard let requestUrl = url else { fatalError() }
-        let timeout : TimeInterval = 5.0
-        var request = URLRequest(url: requestUrl, timeoutInterval: timeout)
-        request.httpMethod = "POST"
-        let params = "user=\(urlEncode(userData.settingsUserName))&pass=\(urlEncode(userData.settingsUserPassword))&device=\(urlEncode(UIDevice.current.name))"
-        request.httpBody = params.data(using: .utf8)
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            
-            if let error = error {
-                print("Error took place \(error)")
-                DispatchQueue.main.async() { // TODO: centralize
-                    self.userData.settingsUserPassword = ""
-                }
-                return
+        func onError(){
+            self.showLoginResult(state: false)
+            DispatchQueue.main.async() {
+                self.loginMessage = "Verbindungsfehler!"
+                self.userData.settingsUserPassword = ""
             }
-            guard let data = data else {return}
+        }
+        
+        func onSuccess(response : String){
             do{
-                let model = try JSONDecoder().decode(TokenCreationResponseModel.self, from: data)
+                let model = try JSONDecoder().decode(TokenCreationResponseModel.self, from: response.data(using: .utf8)!)
                 
                 if(model.success){
                     DispatchQueue.main.async() {
@@ -139,7 +107,6 @@ struct SettingsView: View {
                         self.loginMessage = "Die Anmeldung war erfolgreich."
                     }
                 }else{
-                    print("Response data: \(model.success) Token: \(model.token)")
                     DispatchQueue.main.async() {
                         self.showLoginResult(state: false)
                         self.loginMessage = "Die Anmeldung war nicht erfolgreich."
@@ -147,9 +114,7 @@ struct SettingsView: View {
                 }
                 return
                 
-            }catch let err{
-                print(err)
-            }
+            }catch _{}
             
             self.showLoginResult(state: false)
             DispatchQueue.main.async() {
@@ -157,7 +122,10 @@ struct SettingsView: View {
                 self.userData.settingsUserPassword = ""
             }
         }
-        task.resume()
+        
+        let paramDict = ["user": userData.settingsUserName, "pass": userData.settingsUserPassword, "device" : UIDevice.current.name]
+        
+        httpCall(urlString: urlString + "createAuthToken", timeoutSeconds: 5.0, method: HttpMethod.POST, postParams: paramDict, errorHandler: onError, successHandler: onSuccess)
     }
     
     func showLoginResult(state : Bool){
