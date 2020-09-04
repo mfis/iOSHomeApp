@@ -8,11 +8,6 @@
 
 import Foundation
 
-struct TokenCreationResponseModel: Codable {
-    var success: Bool
-    var token: String
-}
-
 fileprivate let userDefaults = UserDefaults.standard
 
 func loadUrl() -> String {

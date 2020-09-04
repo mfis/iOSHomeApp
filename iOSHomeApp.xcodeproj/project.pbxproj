@@ -17,6 +17,8 @@
 		8C7C477424FEC24900FA03CF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C477324FEC24900FA03CF /* SettingsView.swift */; };
 		8C7C477624FEC2AA00FA03CF /* signInFirst.html in Resources */ = {isa = PBXBuildFile; fileRef = 8C7C477524FEC2AA00FA03CF /* signInFirst.html */; };
 		8C7C477824FEC2DC00FA03CF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C477724FEC2DC00FA03CF /* UserData.swift */; };
+		8CCA42AB2502998E008852F1 /* NetworkStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA42AA2502998E008852F1 /* NetworkStructs.swift */; };
+		8CCA42AD25029A1B008852F1 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA42AC25029A1B008852F1 /* Mocks.swift */; };
 		8CE70742250163B200A108C6 /* WebViewObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE70741250163B200A108C6 /* WebViewObserver.swift */; };
 		8CE7074425016FD100A108C6 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE7074325016FD100A108C6 /* Network.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +36,8 @@
 		8C7C477324FEC24900FA03CF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8C7C477524FEC2AA00FA03CF /* signInFirst.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = signInFirst.html; sourceTree = "<group>"; };
 		8C7C477724FEC2DC00FA03CF /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		8CCA42AA2502998E008852F1 /* NetworkStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStructs.swift; sourceTree = "<group>"; };
+		8CCA42AC25029A1B008852F1 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		8CE70741250163B200A108C6 /* WebViewObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewObserver.swift; sourceTree = "<group>"; };
 		8CE7074325016FD100A108C6 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +85,8 @@
 				8C7C477724FEC2DC00FA03CF /* UserData.swift */,
 				8CE70741250163B200A108C6 /* WebViewObserver.swift */,
 				8CE7074325016FD100A108C6 /* Network.swift */,
+				8CCA42AA2502998E008852F1 /* NetworkStructs.swift */,
+				8CCA42AC25029A1B008852F1 /* Mocks.swift */,
 			);
 			path = iOSHomeApp;
 			sourceTree = "<group>";
@@ -168,11 +174,13 @@
 				8C7C477824FEC2DC00FA03CF /* UserData.swift in Sources */,
 				8CE70742250163B200A108C6 /* WebViewObserver.swift in Sources */,
 				8CE7074425016FD100A108C6 /* Network.swift in Sources */,
+				8CCA42AB2502998E008852F1 /* NetworkStructs.swift in Sources */,
 				8C7C477424FEC24900FA03CF /* SettingsView.swift in Sources */,
 				8C7C475E24FE950500FA03CF /* AppDelegate.swift in Sources */,
 				8C7C476024FE950500FA03CF /* SceneDelegate.swift in Sources */,
 				8C7C476224FE950500FA03CF /* ContentView.swift in Sources */,
 				8C7C477224FEC1A700FA03CF /* Data.swift in Sources */,
+				8CCA42AD25029A1B008852F1 /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
