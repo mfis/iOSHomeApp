@@ -29,7 +29,7 @@ struct ContentView: View {
 struct BackgroundView : View {
     
     var body: some View {
-        Image(systemName: "house.fill").imageScale(.medium).onAppear(){print("house")}
+        Image(systemName: "house.fill").imageScale(.medium)
     }
     
 }
@@ -60,7 +60,7 @@ struct NavIconLeft : View {
             Image(systemName: "arrow.clockwise.circle").foregroundColor(Color.gray)
             Text(userData.webViewTitle).frame(width: 70, alignment: .leading).foregroundColor(Color.gray).font(.caption)
         }
-    }
+    } 
 }
 
 struct NavIconRight : View {

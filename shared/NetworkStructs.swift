@@ -13,16 +13,20 @@ struct TokenCreationResponseModel: Codable {
     var token : String
 }
 
-struct HomeViewValueModel: Codable {
+struct HomeViewValueModel:  Hashable, Codable, Identifiable  {
+    var id : String
     var key : String
     var value : String
+    var accent : String
 }
 
-struct HomeViewPlaceModel: Codable {
+struct HomeViewPlaceModel: Hashable, Codable, Identifiable {
+    var id : String
     var name : String
     var values : [HomeViewValueModel]
 }
 
 struct HomeViewModel: Codable {
+    var timestamp : String
     var places : [HomeViewPlaceModel]
 }

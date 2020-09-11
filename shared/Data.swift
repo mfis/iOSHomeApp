@@ -10,6 +10,10 @@ import Foundation
 
 fileprivate let userDefaults = UserDefaults.standard
 
+func syncDefaults(){
+    userDefaults.synchronize()
+}
+
 func loadUrl() -> String {
     if let x = userDefaults.string(forKey: "userDefaultKeyUrl") {
         return x
@@ -23,6 +27,7 @@ func saveUrl(newUrl : String) {
 }
 
 func loadUserName() -> String {
+    syncDefaults()
     if let x = userDefaults.string(forKey: "userDefaultKeyUserName") {
         return x
     }else{
