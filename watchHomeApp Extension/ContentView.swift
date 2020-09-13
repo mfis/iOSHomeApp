@@ -17,7 +17,6 @@ struct ContentView: View {
         Form {
             HStack{
                 HStack {
-                    Image(systemName: "arrow.clockwise.circle").resizable().frame(width: 12.0, height: 12.0)
                     Text(userData.homeViewModel.timestamp).frame(maxWidth: .infinity).frame(height: 1).font(.footnote)
                 }.onTapGesture {
                     loadModel(userData: self.userData)
@@ -31,7 +30,7 @@ struct ContentView: View {
                     Text(place.name).foregroundColor(.white).font(Font.headline)
                     ForEach(place.values) { entry in
                         HStack{
-                            Text(entry.key).foregroundColor(Color.init(hexString: entry.accent))
+                            Text(entry.key).foregroundColor(Color.init(hexString: entry.accent)).font(.footnote)
                             Spacer()
                             Text(entry.value).foregroundColor(Color.init(hexString: entry.accent))
                         }
