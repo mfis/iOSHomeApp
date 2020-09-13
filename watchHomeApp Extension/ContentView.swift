@@ -34,9 +34,6 @@ struct ContentView: View {
                 }.padding(0)
             }
         }.navigationBarTitle("Zuhause")
-            .onAppear(){
-                self.userData.homeViewModel = homeViewModelMock()
-        }
     }
     
 }

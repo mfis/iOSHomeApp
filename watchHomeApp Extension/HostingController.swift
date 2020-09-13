@@ -12,7 +12,12 @@ import SwiftUI
 
 class HostingController: WKHostingController<AnyView> {
     
-    private var userData = UserData()
+    var userData : UserData!
+    
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
+        self.userData = (WKExtension.shared().delegate as! ExtensionDelegate).userData
+    }
     
     override var body: AnyView {
         return AnyView(ContentView().environmentObject(userData))
