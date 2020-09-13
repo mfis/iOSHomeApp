@@ -15,6 +15,17 @@ struct ContentView: View {
     
     var body: some View {
         Form {
+            HStack{
+                HStack {
+                    Image(systemName: "arrow.clockwise.circle").resizable().frame(width: 12.0, height: 12.0)
+                    Text(userData.homeViewModel.timestamp).frame(maxWidth: .infinity).frame(height: 1).font(.footnote)
+                }.onTapGesture {
+                    loadModel(userData: self.userData)
+                }
+                NavigationLink(destination: SettingsViewWatch()) {
+                    Image(systemName: "slider.horizontal.3").frame(maxWidth: .infinity).imageScale(.small)
+                }.padding(0)
+            }
             List(userData.homeViewModel.places) { place in
                 VStack{
                     Text(place.name).foregroundColor(.white).font(Font.headline)
@@ -26,12 +37,6 @@ struct ContentView: View {
                         }
                     }
                 }
-            }
-            HStack{
-                Text(userData.homeViewModel.timestamp).frame(maxWidth: .infinity).frame(height: 1).font(.footnote)
-                NavigationLink(destination: SettingsViewWatch()) {
-                    Image(systemName: "slider.horizontal.3").frame(maxWidth: .infinity).imageScale(.small)
-                }.padding(0)
             }
         }.navigationBarTitle("Zuhause")
     }

@@ -27,7 +27,7 @@ enum HttpMethod : String{
 typealias HttpErrorHandler = () -> Void
 typealias HttpSuccessHandler = (_ response : String) -> Void
 
-func httpCall(urlString : String, timeoutSeconds : Double, method : HttpMethod, postParams: [String: String]?, errorHandler : @escaping HttpErrorHandler, successHandler : @escaping HttpSuccessHandler) {
+func httpCall(urlString : String, timeoutSeconds : Double, method : HttpMethod, postParams: [String: String]?, authHeaderFields: [String: String]?, errorHandler : @escaping HttpErrorHandler, successHandler : @escaping HttpSuccessHandler) {
     
     let url = URL(string: urlString)
     guard let requestUrl = url else { fatalError() }
@@ -36,6 +36,11 @@ func httpCall(urlString : String, timeoutSeconds : Double, method : HttpMethod, 
     request.httpMethod = method.rawValue
     if let postParams = postParams {
         request.httpBody = buildQuery(postParams).data(using: .utf8)
+    }
+    if let authHeaderFields = authHeaderFields {
+        request.addValue(authHeaderFields["appUserName"]!, forHTTPHeaderField: "appUserName")
+        request.addValue(authHeaderFields["appUserToken"]!, forHTTPHeaderField: "appUserToken")
+        request.addValue(authHeaderFields["appDevice"]!, forHTTPHeaderField: "appDevice")
     }
     
     let task = URLSession.shared.dataTask(with: request) { (data, response, error) in

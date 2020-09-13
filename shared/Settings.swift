@@ -34,7 +34,7 @@ func validateLogin(_ urlString : String, userData : UserData) {
         }
     }
     
-    httpCall(urlString: urlString + "whoami", timeoutSeconds: 3.0, method: HttpMethod.GET, postParams: nil, errorHandler: onError, successHandler: onSuccess)
+    httpCall(urlString: urlString + "whoami", timeoutSeconds: 3.0, method: HttpMethod.GET, postParams: nil, authHeaderFields: nil, errorHandler: onError, successHandler: onSuccess)
 }
 
 func auth(_ urlString : String, userData : UserData){
@@ -88,7 +88,7 @@ func auth(_ urlString : String, userData : UserData){
     
     let paramDict = ["user": userData.settingsUserName, "pass": userData.settingsUserPassword, "device" : userData.device]
     
-    httpCall(urlString: urlString + "createAuthToken", timeoutSeconds: 5.0, method: HttpMethod.POST, postParams: paramDict, errorHandler: onError, successHandler: onSuccess)
+    httpCall(urlString: urlString + "createAuthToken", timeoutSeconds: 5.0, method: HttpMethod.POST, postParams: paramDict, authHeaderFields: nil, errorHandler: onError, successHandler: onSuccess)
 }
 
 func showLoginResult(state : Bool, userData : UserData){

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C4BF850250E586000F043D6 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4BF84F250E586000F043D6 /* Content.swift */; };
 		8C689CC12504AD2400E747C1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C477124FEC1A700FA03CF /* Data.swift */; };
 		8C689CC22504AD2B00E747C1 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C477724FEC2DC00FA03CF /* UserData.swift */; };
 		8C7C475E24FE950500FA03CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C475D24FE950500FA03CF /* AppDelegate.swift */; };
@@ -85,6 +86,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8C4BF84F250E586000F043D6 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		8C689CBD2504A9A100E747C1 /* Zuhause.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Zuhause.entitlements; sourceTree = "<group>"; };
 		8C689CBE2504AA3900E747C1 /* watchHomeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchHomeApp.entitlements; sourceTree = "<group>"; };
 		8C689CBF2504AA4B00E747C1 /* watchHomeApp Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "watchHomeApp Extension.entitlements"; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				8C689CBF2504AA4B00E747C1 /* watchHomeApp Extension.entitlements */,
+				8C4BF84F250E586000F043D6 /* Content.swift */,
 				8CCA42C12502A494008852F1 /* ContentView.swift */,
 				8CCA42C32502A494008852F1 /* HostingController.swift */,
 				8CCA42C52502A494008852F1 /* ExtensionDelegate.swift */,
@@ -396,6 +399,7 @@
 				8CFDA752250500BB008A7BD7 /* Mocks.swift in Sources */,
 				8CF54651250966730021EC51 /* Network.swift in Sources */,
 				8C872337250AAFAD0042B7B2 /* Settings.swift in Sources */,
+				8C4BF850250E586000F043D6 /* Content.swift in Sources */,
 				8CCA42C22502A494008852F1 /* ContentView.swift in Sources */,
 				8CCA42C82502A494008852F1 /* NotificationController.swift in Sources */,
 				8CCA42C62502A494008852F1 /* ExtensionDelegate.swift in Sources */,
