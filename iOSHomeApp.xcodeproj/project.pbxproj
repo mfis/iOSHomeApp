@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8C4BF850250E586000F043D6 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4BF84F250E586000F043D6 /* Content.swift */; };
+		8C4BF852250E975400F043D6 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4BF851250E975400F043D6 /* ComplicationController.swift */; };
 		8C689CC12504AD2400E747C1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C477124FEC1A700FA03CF /* Data.swift */; };
 		8C689CC22504AD2B00E747C1 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C477724FEC2DC00FA03CF /* UserData.swift */; };
 		8C7C475E24FE950500FA03CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C475D24FE950500FA03CF /* AppDelegate.swift */; };
@@ -87,6 +88,7 @@
 
 /* Begin PBXFileReference section */
 		8C4BF84F250E586000F043D6 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		8C4BF851250E975400F043D6 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		8C689CBD2504A9A100E747C1 /* Zuhause.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Zuhause.entitlements; sourceTree = "<group>"; };
 		8C689CBE2504AA3900E747C1 /* watchHomeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchHomeApp.entitlements; sourceTree = "<group>"; };
 		8C689CBF2504AA4B00E747C1 /* watchHomeApp Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "watchHomeApp Extension.entitlements"; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				8CCA42C52502A494008852F1 /* ExtensionDelegate.swift */,
 				8CCA42C72502A494008852F1 /* NotificationController.swift */,
 				8CCA42C92502A494008852F1 /* NotificationView.swift */,
+				8C4BF851250E975400F043D6 /* ComplicationController.swift */,
 				8CCA42CB2502A495008852F1 /* Assets.xcassets */,
 				8CCA42D02502A495008852F1 /* Info.plist */,
 				8CCA42D12502A495008852F1 /* PushNotificationPayload.apns */,
@@ -403,6 +406,7 @@
 				8CCA42C22502A494008852F1 /* ContentView.swift in Sources */,
 				8CCA42C82502A494008852F1 /* NotificationController.swift in Sources */,
 				8CCA42C62502A494008852F1 /* ExtensionDelegate.swift in Sources */,
+				8C4BF852250E975400F043D6 /* ComplicationController.swift in Sources */,
 				8CCA42CA2502A494008852F1 /* NotificationView.swift in Sources */,
 				8CF54650250965880021EC51 /* SettingsViewWatch.swift in Sources */,
 			);
