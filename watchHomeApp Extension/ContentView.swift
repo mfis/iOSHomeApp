@@ -29,10 +29,10 @@ struct ContentView: View {
                 VStack{
                     Text(place.name).foregroundColor(.white).font(Font.headline)
                     ForEach(place.values) { entry in
-                        HStack{
+                        HStack(spacing: 2){
                             Text(entry.key).foregroundColor(Color.init(hexString: entry.accent)).font(.footnote)
                             Spacer()
-                            Text(entry.value).foregroundColor(Color.init(hexString: entry.accent))
+                            Text(entry.value + String.init(tendency:entry.tendency)).foregroundColor(Color.init(hexString: entry.accent))
                         }
                     }
                 }
@@ -42,15 +42,26 @@ struct ContentView: View {
     
 }
 
-extension Color {
-    init(hex: Int) {
-        self.init(
-            .sRGB,
-            red: Double((hex >> 16) & 0xff) / 255,
-            green: Double((hex >> 08) & 0xff) / 255,
-            blue: Double((hex >> 00) & 0xff) / 255
-        )
+extension String {
+    init(tendency: String){
+        switch(tendency){
+        case "RISE":
+            self.init(" ↑")
+        case "RISE_SLIGHT":
+            self.init(" ↗")
+        case "EQUAL":
+            self.init(" →")
+        case "FALL_SLIGHT":
+            self.init(" ↘")
+        case "FALL":
+            self.init(" ↓")
+        default:
+            self.init("")
+        }
     }
+}
+
+extension Color {
     init(hexString: String) {
         var int: UInt64 = 0
         Scanner(string: hexString).scanHexInt64(&int)

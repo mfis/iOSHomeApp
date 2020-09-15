@@ -18,6 +18,7 @@ struct HomeViewValueModel:  Hashable, Codable, Identifiable  {
     var key : String
     var value : String
     var accent : String
+    var tendency : String
 }
 
 struct HomeViewPlaceModel: Hashable, Codable, Identifiable {
